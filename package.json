@@ -1,0 +1,21 @@
+{
+    "name": "dwarvesforge-thorin-snippets",
+    "displayName": "Dwarvesforge Thorin Snippets",
+    "description": "Dwarvesforge Thorin Visual Studio Code Snippets",
+    "version": "1.1.11",
+    "publisher": "Dwarvesforge",
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "php",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

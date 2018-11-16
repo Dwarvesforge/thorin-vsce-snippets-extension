@@ -1,0 +1,687 @@
+{
+  "Thorin::archive_files": {
+    "prefix": "Thorin::archive_files",
+    "body": "Thorin::archive_files(${1:string|array \\$files}, ${2:string \\$archive})",
+    "description": "Create an archive with some files/folders"
+  },
+  "Thorin::extract_files": {
+    "prefix": "Thorin::extract_files",
+    "body": "Thorin::extract_files(${1:string \\$archive}, ${2:string \\$output})",
+    "description": "Extract an archive file in an output folder"
+  },
+  "Thorin::array_all": {
+    "prefix": "Thorin::array_all",
+    "body": "Thorin::array_all(${1:array \\$items}, ${2:callable \\$func})",
+    "description": "Returns true if the provided function returns true for all elements of an array, false otherwise"
+  },
+  "Thorin::array_any": {
+    "prefix": "Thorin::array_any",
+    "body": "Thorin::array_any(${1:array \\$items}, ${2:callable \\$func})",
+    "description": "Returns true if the provided function returns true for at least one element of an array, false otherwise."
+  },
+  "Thorin::array_chunk": {
+    "prefix": "Thorin::array_chunk",
+    "body": "Thorin::array_chunk(${1:array \\$items}, ${2:integer \\$size})",
+    "description": "Chunks an array into smaller arrays of a specified size"
+  },
+  "Thorin::array_deep_flatten": {
+    "prefix": "Thorin::array_deep_flatten",
+    "body": "Thorin::array_deep_flatten(${1:array \\$items})",
+    "description": "Deep flattens an array"
+  },
+  "Thorin::array_drop_left": {
+    "prefix": "Thorin::array_drop_left",
+    "body": "Thorin::array_drop_left(${1:array \\$items}, ${2:integer \\$n = 1})",
+    "description": "Returns a new array with n elements removed from the left"
+  },
+  "Thorin::array_drop_right": {
+    "prefix": "Thorin::array_drop_right",
+    "body": "Thorin::array_drop_right(${1:array \\$items}, ${2:integer \\$n = 1})",
+    "description": "Returns a new array with n elements removed from the right"
+  },
+  "Thorin::array_find_last_index": {
+    "prefix": "Thorin::array_find_last_index",
+    "body": "Thorin::array_find_last_index(${1:array \\$items}, ${2:callable \\$fund})",
+    "description": "Returns the index of the last element for which the provided function returns a truthy value."
+  },
+  "Thorin::array_find_last": {
+    "prefix": "Thorin::array_find_last",
+    "body": "Thorin::array_find_last(${1:array \\$items}, ${2:callable \\$func})",
+    "description": "Returns the last element for which the provided function returns a truthy value."
+  },
+  "Thorin::array_first": {
+    "prefix": "Thorin::array_first",
+    "body": "Thorin::array_first(${1:array \\$items})",
+    "description": "Returns the first item of a list."
+  },
+  "Thorin::array_flatten": {
+    "prefix": "Thorin::array_flatten",
+    "body": "Thorin::array_flatten(${1:array \\$items})",
+    "description": "Flattens an array up to the one level depth."
+  },
+  "Thorin::array_group_by": {
+    "prefix": "Thorin::array_group_by",
+    "body": "Thorin::array_group_by(${1:array \\$items}, ${2:callable \\$func})",
+    "description": "Groups the elements of an array based on the given function."
+  },
+  "Thorin::array_has_duplicates": {
+    "prefix": "Thorin::array_has_duplicates",
+    "body": "Thorin::array_has_duplicates(${1:array \\$items})",
+    "description": "Checks a flat list for duplicate values. Returns true if duplicate values exists and false if values are all unique."
+  },
+  "Thorin::array_head": {
+    "prefix": "Thorin::array_head",
+    "body": "Thorin::array_head(${1:array \\$items})",
+    "description": "Returns all elements in an array except for the last one."
+  },
+  "Thorin::array_is_assoc": {
+    "prefix": "Thorin::array_is_assoc",
+    "body": "Thorin::array_is_assoc(${1:array \\$arr})",
+    "description": "Check if array is assocative or not"
+  },
+  "Thorin::array_last": {
+    "prefix": "Thorin::array_last",
+    "body": "Thorin::array_last(${1:array \\$items})",
+    "description": "Returns the last element in an array."
+  },
+  "Thorin::array_order_by": {
+    "prefix": "Thorin::array_order_by",
+    "body": "Thorin::array_order_by(${1:array \\$items}, ${2:string \\$attr}, ${3:string \\$order = \"asc\"})",
+    "description": "Sorts a collection of arrays or objects by key."
+  },
+  "Thorin::array_pluck": {
+    "prefix": "Thorin::array_pluck",
+    "body": "Thorin::array_pluck(${1:array \\$items}, ${2:string \\$key})",
+    "description": "Retrieves all of the values for a given key."
+  },
+  "Thorin::array_range": {
+    "prefix": "Thorin::array_range",
+    "body": "Thorin::array_range(${1:integer \\$from = 0}, ${2:integer \\$to = 100}, ${3:integer \\$step = 1})",
+    "description": "Create an array with a range from, to."
+  },
+  "Thorin::array_reject": {
+    "prefix": "Thorin::array_reject",
+    "body": "Thorin::array_reject(${1:array \\$items}, ${2:callback \\$func})",
+    "description": "Filters the collection using the given callback."
+  },
+  "Thorin::array_remove_empty": {
+    "prefix": "Thorin::array_remove_empty",
+    "body": "Thorin::array_remove_empty(${1:array \\$array})",
+    "description": "Remove empty entries in an array"
+  },
+  "Thorin::array_tail": {
+    "prefix": "Thorin::array_tail",
+    "body": "Thorin::array_tail(${1:array \\$items})",
+    "description": "Returns all elements in an array except for the first one."
+  },
+  "Thorin::array_take": {
+    "prefix": "Thorin::array_take",
+    "body": "Thorin::array_take(${1:array \\$items}, ${2:integer \\$n})",
+    "description": "Returns an array with n elements taken from the beginning"
+  },
+  "Thorin::array_without": {
+    "prefix": "Thorin::array_without",
+    "body": "Thorin::array_without(${1:array \\$item}, ${2:mixed \\$params...})",
+    "description": "Filters out the elements of an array, that have one of the specified values."
+  },
+  "Thorin::cache_factory": {
+    "prefix": "Thorin::cache_factory",
+    "body": "Thorin::cache_factory(${1:string \\$driver = null}, ${2:boolean \\$forceNewPool = false})",
+    "description": "Create a cache pool with the driver requested. Return a [PHP-Cache](http://www.php-cache.com/en/latest/introduction/) pool to work with.\nIf no driver is passed, the default one in the config cache.DEFAULT_DRIVER will be used."
+  },
+  "Thorin::cache": {
+    "prefix": "Thorin::cache",
+    "body": "Thorin::cache(${1:string \\$key}, ${2:mixed \\$value = null}, ${3:integer \\$expiresAfter = null}, ${4:string \\$driver = null})",
+    "description": "Get/Set a cache item quickly with this cache helper function.\nAllows to add, edit or delete any cache item quickly.\nTo delete, pass -1 as value parameter.\nThe key will automatically bein hashed using sha1."
+  },
+  "Thorin::to_boolean": {
+    "prefix": "Thorin::to_boolean",
+    "body": "Thorin::to_boolean(${1:string \\$var})",
+    "description": "Convert variable to boolean\n"
+  },
+  "Thorin::collect": {
+    "prefix": "Thorin::collect",
+    "body": "Thorin::collect(${1:array \\$array})",
+    "description": "Create a [collection instance](https://laravel.com/docs/5.7/collections#available-methods) to work with from the passed array."
+  },
+  "Thorin::random_color": {
+    "prefix": "Thorin::random_color",
+    "body": "Thorin::random_color()",
+    "description": "Generate a randon hexadecimal color like \"F4A342\""
+  },
+  "Thorin::config_path": {
+    "prefix": "Thorin::config_path",
+    "body": "Thorin::config_path()",
+    "description": "Return the config path"
+  },
+  "Thorin::config": {
+    "prefix": "Thorin::config",
+    "body": "Thorin::config(${1:string \\$path})",
+    "description": "Get a configuration depending on the path passed"
+  },
+  "Thorin::db_boot_eloquent": {
+    "prefix": "Thorin::db_boot_eloquent",
+    "body": "Thorin::db_boot_eloquent()",
+    "description": "Boot the eloquent framework"
+  },
+  "Thorin::db_connection_config": {
+    "prefix": "Thorin::db_connection_config",
+    "body": "Thorin::db_connection_config(${1:string \\$name = null})",
+    "description": "Return a db connection configuration array"
+  },
+  "Thorin::db_connection_factory": {
+    "prefix": "Thorin::db_connection_factory",
+    "body": "Thorin::db_connection_factory(${1:string \\$connection = null})",
+    "description": "Return eloquent connection [Illuminate\\Database\\Connection](https://laravel.com/api/5.3/Illuminate/Database/Connection.html) instance of the requested connection"
+  },
+  "Thorin::db_eloquent_capsule": {
+    "prefix": "Thorin::db_eloquent_capsule",
+    "body": "Thorin::db_eloquent_capsule()",
+    "description": "Boot the eloquent ORM with the db.connections configurations"
+  },
+  "Thorin::db": {
+    "prefix": "Thorin::db",
+    "body": "Thorin::db(${1:string \\$connection = null})",
+    "description": "Return eloquent connection [Illuminate\\Database\\Connection](https://laravel.com/api/5.3/Illuminate/Database/Connection.html) instance of the requested connection"
+  },
+  "Thorin::mailer_config": {
+    "prefix": "Thorin::mailer_config",
+    "body": "Thorin::mailer_config(${1:string \\$name = null})",
+    "description": "Return a mailer configuration array"
+  },
+  "Thorin::mailer_factory": {
+    "prefix": "Thorin::mailer_factory",
+    "body": "Thorin::mailer_factory(${1:string \\$name = null})",
+    "description": "Return a mailer [PHPMailer](https://github.com/PHPMailer/PHPMailer) instance of the requested mailer registered in the `email` config file"
+  },
+  "Thorin::mailer": {
+    "prefix": "Thorin::mailer",
+    "body": "Thorin::mailer(${1:string \\$mailer = null})",
+    "description": "Return a mailer [PHPMailer](https://github.com/PHPMailer/PHPMailer) instance of the requested mailer registered in the `email` config file"
+  },
+  "Thorin::emitter": {
+    "prefix": "Thorin::emitter",
+    "body": "Thorin::emitter(${1:string \\$name = \"default\"})",
+    "description": "Return a [League\\Event\\Emitter](http://event.thephpleague.com/2.0/emitter/basic-usage/) instance to work with."
+  },
+  "Thorin::dir_size": {
+    "prefix": "Thorin::dir_size",
+    "body": "Thorin::dir_size(${1:string \\$directory_path})",
+    "description": "Calculate a directory size"
+  },
+  "Thorin::disk_config": {
+    "prefix": "Thorin::disk_config",
+    "body": "Thorin::disk_config(${1:string \\$name = \"base\"})",
+    "description": "Return a disk configuration array"
+  },
+  "Thorin::disk": {
+    "prefix": "Thorin::disk",
+    "body": "Thorin::disk(${1:string \\$name})",
+    "description": "Return a filesystem [Flysystem](http://flysystem.thephpleague.com/docs/) instance of the requested disk"
+  },
+  "Thorin::disks": {
+    "prefix": "Thorin::disks",
+    "body": "Thorin::disks(${1:string \\$disks...})",
+    "description": "Mount some disks inside a manager and return a [League\\Flysystem\\MountManager](https://flysystem.thephpleague.com/docs/advanced/mount-manager/) instance to work with."
+  },
+  "Thorin::file_ext": {
+    "prefix": "Thorin::file_ext",
+    "body": "Thorin::file_ext(${1:string \\$filepath})",
+    "description": "Return the extension of the file path passed"
+  },
+  "Thorin::filesystem_factory": {
+    "prefix": "Thorin::filesystem_factory",
+    "body": "Thorin::filesystem_factory(${1:string \\$disk = null})",
+    "description": "Create a filesystem instance with the disk requested. Return a [Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) instance to work with.\nIf no disk is passed, the default one in the config filsystem.default_disk will be used."
+  },
+  "Thorin::force_download": {
+    "prefix": "Thorin::force_download",
+    "body": "Thorin::force_download(${1:string \\$filepath}, ${2:string \\$filename})",
+    "description": "Force download the passed file with the passed name"
+  },
+  "Thorin::human_filesize": {
+    "prefix": "Thorin::human_filesize",
+    "body": "Thorin::human_filesize(${1:integer \\$filesize})",
+    "description": "Convert a filesize into a human readable filesize like 10 TO, etc..."
+  },
+  "Thorin::compose": {
+    "prefix": "Thorin::compose",
+    "body": "Thorin::compose(${1:callable ...\\$functions})",
+    "description": "Return a new function that composes multiple functions into a single callable."
+  },
+  "Thorin::curry": {
+    "prefix": "Thorin::curry",
+    "body": "Thorin::curry(${1:callable \\$function})",
+    "description": "Curries a function to take arguments in multiple calls."
+  },
+  "Thorin::memoize": {
+    "prefix": "Thorin::memoize",
+    "body": "Thorin::memoize(${1:callable \\$func})",
+    "description": "Memoization of a function results in memory."
+  },
+  "Thorin::add_action": {
+    "prefix": "Thorin::add_action",
+    "body": "Thorin::add_action(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
+    "description": "Add an action linked to a callback that will be called when the `t_do_action` with the same name is called."
+  },
+  "Thorin::add_filter": {
+    "prefix": "Thorin::add_filter",
+    "body": "Thorin::add_filter(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
+    "description": "Hooks a function or method to a specific filter action."
+  },
+  "Thorin::apply_filters": {
+    "prefix": "Thorin::apply_filters",
+    "body": "Thorin::apply_filters(${1:string \\$name}, ${2:mixed \\$value}, ${3:mixed \\$var...})",
+    "description": "Call the functions added to a filter hook."
+  },
+  "Thorin::do_action": {
+    "prefix": "Thorin::do_action",
+    "body": "Thorin::do_action(${1:string \\$name}, ${2:mixed \\$args...})",
+    "description": "Execute all the corresponding actions registered with the `t_add_action` function."
+  },
+  "Thorin::autolink": {
+    "prefix": "Thorin::autolink",
+    "body": "Thorin::autolink(${1:string \\$text}, ${2:array \\$options = []})",
+    "description": "Automaticaly transform urls into links in the passed text."
+  },
+  "Thorin::esc_attr": {
+    "prefix": "Thorin::esc_attr",
+    "body": "Thorin::esc_attr(${1:string \\$string})",
+    "description": "Escape the passed string to ensure it will not break any html when printed inside an attribute\n"
+  },
+  "Thorin::text_to_html": {
+    "prefix": "Thorin::text_to_html",
+    "body": "Thorin::text_to_html(${1:string \\$text})",
+    "description": "Format a simple passed text into a nice formated html one.\nThis will transform the new line into <br>, as well as the line breaks into paragraphs\n"
+  },
+  "Thorin::available_languages": {
+    "prefix": "Thorin::available_languages",
+    "body": "Thorin::available_languages()",
+    "description": "Return the available languages set in configuration\n"
+  },
+  "Thorin::browser_language": {
+    "prefix": "Thorin::browser_language",
+    "body": "Thorin::browser_language()",
+    "description": "Return the browser language if exist, otherwise, return false\n"
+  },
+  "Thorin::default_language": {
+    "prefix": "Thorin::default_language",
+    "body": "Thorin::default_language()",
+    "description": "Return the default language set in configuration\n"
+  },
+  "Thorin::lang": {
+    "prefix": "Thorin::lang",
+    "body": "Thorin::lang(${1:string \\$path}, ${2:string \\$lang = null})",
+    "description": "Return a value from the lang files. First part of the path define the file to pick the language string from.\nExemple : `newsletter.title` will load the `newsletter` file and search for the `title` inside."
+  },
+  "Thorin::language": {
+    "prefix": "Thorin::language",
+    "body": "Thorin::language(${1:array \\$available = Thorin::config('i18n.available_languages')}, ${2:string \\$default = Thorin::config('i18n.default_language')}, ${3:string \\$getParam = \"lang\"})",
+    "description": "Return the two character language code found in the browser language or in\na $_GET parameter using the $gerParam variable name.\n"
+  },
+  "Thorin::average_color": {
+    "prefix": "Thorin::average_color",
+    "body": "Thorin::average_color(${1:string \\$filePath})",
+    "description": "Get the average color of an image in hexadecimal format like \"45A3F3\""
+  },
+  "Thorin::image": {
+    "prefix": "Thorin::image",
+    "body": "Thorin::image(${1:string \\$path})",
+    "description": "Return an Intervention Image instance to work with"
+  },
+  "Thorin::optimize_image": {
+    "prefix": "Thorin::optimize_image",
+    "body": "Thorin::optimize_image(${1:string \\$path}, ${2:string \\$saveTo = null}, ${3:object \\$settings = {}})",
+    "description": "Optimize the passed image by compressing (resize and quality) it."
+  },
+  "Thorin::is_ajax_request": {
+    "prefix": "Thorin::is_ajax_request",
+    "body": "Thorin::is_ajax_request()",
+    "description": "Check if the script has been called using an ajax request or not\n"
+  },
+  "Thorin::is_android": {
+    "prefix": "Thorin::is_android",
+    "body": "Thorin::is_android()",
+    "description": "Return true if the request is made from an android device"
+  },
+  "Thorin::is_crawler": {
+    "prefix": "Thorin::is_crawler",
+    "body": "Thorin::is_crawler()",
+    "description": "Detect if the \"visitor\" is a web crawler like googlebot, etc...\n"
+  },
+  "Thorin::is_desktop": {
+    "prefix": "Thorin::is_desktop",
+    "body": "Thorin::is_desktop()",
+    "description": "Return true if the request is made from a desktop device"
+  },
+  "Thorin::is_email": {
+    "prefix": "Thorin::is_email",
+    "body": "Thorin::is_email(${1:string \\$value})",
+    "description": "Check if the passed email is valid"
+  },
+  "Thorin::is_environment": {
+    "prefix": "Thorin::is_environment",
+    "body": "Thorin::is_environment(${1:string \\$environments...})",
+    "description": "Check if the environment correspond to at least 1 passed environments"
+  },
+  "Thorin::is_even": {
+    "prefix": "Thorin::is_even",
+    "body": "Thorin::is_even(${1:number \\$number})",
+    "description": "Return true if the given number is even, false otherwise."
+  },
+  "Thorin::is_ios": {
+    "prefix": "Thorin::is_ios",
+    "body": "Thorin::is_ios()",
+    "description": "Return true if the request is made from an ios device"
+  },
+  "Thorin::is_ip_match": {
+    "prefix": "Thorin::is_ip_match",
+    "body": "Thorin::is_ip_match(${1:array \\$ipsList}, ${2:string \\$ip = null})",
+    "description": "Check if the user ip address is in the list passed as argument"
+  },
+  "Thorin::is_mobile": {
+    "prefix": "Thorin::is_mobile",
+    "body": "Thorin::is_mobile()",
+    "description": "Return true if the request is made from a mobile device"
+  },
+  "Thorin::is_odd": {
+    "prefix": "Thorin::is_odd",
+    "body": "Thorin::is_odd(${1:number \\$number})",
+    "description": "Returns true if the given number is odd, false otherwise."
+  },
+  "Thorin::is_phone": {
+    "prefix": "Thorin::is_phone",
+    "body": "Thorin::is_phone()",
+    "description": "Return true if the request is made from a phone device"
+  },
+  "Thorin::is_tablet": {
+    "prefix": "Thorin::is_tablet",
+    "body": "Thorin::is_tablet()",
+    "description": "Return true if the request is made from a tablet device"
+  },
+  "Thorin::embed": {
+    "prefix": "Thorin::embed",
+    "body": "Thorin::embed(${1:string \\$url})",
+    "description": "Get the embed code for the passed url\n"
+  },
+  "Thorin::extend": {
+    "prefix": "Thorin::extend",
+    "body": "Thorin::extend(${1:array|object \\$a}, ${2:array|object \\$b}, ${3:boolean \\$deep = true}, ${4:boolean \\$extendNonAssociativeArrays = true})",
+    "description": "Extend an array or an object either deeply or not"
+  },
+  "Thorin::app_path": {
+    "prefix": "Thorin::app_path",
+    "body": "Thorin::app_path(${1:string \\$slug})",
+    "description": "Return the app path depending on the `paths.app` config\n"
+  },
+  "Thorin::asset_path": {
+    "prefix": "Thorin::asset_path",
+    "body": "Thorin::asset_path(${1:string \\$slug}, ${2:boolean \\$from_server_root = false})",
+    "description": "Return a path relative to the `paths.assets` config\n"
+  },
+  "Thorin::base_path": {
+    "prefix": "Thorin::base_path",
+    "body": "Thorin::base_path(${1:string \\$slug})",
+    "description": "Return the base path depending on the `paths.base` config\n"
+  },
+  "Thorin::document_root_path": {
+    "prefix": "Thorin::document_root_path",
+    "body": "Thorin::document_root_path(${1:string \\$slug}, ${2:boolean \\$from_server_root = false})",
+    "description": "Return the document root path depending on the `paths.document_root` config\n"
+  },
+  "Thorin::normalize_path": {
+    "prefix": "Thorin::normalize_path",
+    "body": "Thorin::normalize_path(${1:string \\$path})",
+    "description": "Return a normalized version of the passed path.\n1. Resolve all the ../\n2. Replace backslashes with forwardslashes\n3. Combine multiple slashes into a single slash"
+  },
+  "Thorin::root_path": {
+    "prefix": "Thorin::root_path",
+    "body": "Thorin::root_path(${1:string \\$slug}, ${2:boolean \\$from_server_root = false})",
+    "description": "Return the document root path depending on the `paths.document_root` config\n"
+  },
+  "Thorin::sanitize_path": {
+    "prefix": "Thorin::sanitize_path",
+    "body": "Thorin::sanitize_path(${1:string \\$path})",
+    "description": "Sanitize a path for example like \"/my/cool/../path/.\" to \"/my/path/\"\nIt will do these actions:\n1. Normalize the path (resolve all ../, remove double slashed, etc...)\n2. Remove a trailing \".\"\n3. Make sure the path finish with a \"/\" if it's not a file\n"
+  },
+  "Thorin::recaptcha_display": {
+    "prefix": "Thorin::recaptcha_display",
+    "body": "Thorin::recaptcha_display(${1:string \\$secret = null}, ${2:string \\$sitekey = null}, ${3:string \\$lang = null}, ${4:array \\$attributes = null})",
+    "description": "Display a recaptcha using the configured secret, sitekey, lang and attributes"
+  },
+  "Thorin::recaptcha_factory": {
+    "prefix": "Thorin::recaptcha_factory",
+    "body": "Thorin::recaptcha_factory(${1:string \\$secret = null}, ${2:string \\$sitekey = null}, ${3:string \\$lang = null}, ${4:array \\$attributes = null})",
+    "description": "Create a Arcanedev\\NoCaptcha\\NoCaptcha nocaptcha instance to work with."
+  },
+  "Thorin::recaptcha_verify": {
+    "prefix": "Thorin::recaptcha_verify",
+    "body": "Thorin::recaptcha_verify(${1:string \\$response = null}, ${2:string \\$secret = null}, ${3:string \\$sitekey = null}, ${4:string \\$lang = null}, ${5:array \\$attributes = null})",
+    "description": "Verify that the recaptcha has been checked."
+  },
+  "Thorin::csrf_input": {
+    "prefix": "Thorin::csrf_input",
+    "body": "Thorin::csrf_input(${1:string \\$name = CSRF::TOKEN_NAME})",
+    "description": "Generate a CSRF input hidden field"
+  },
+  "Thorin::csrf_qs": {
+    "prefix": "Thorin::csrf_qs",
+    "body": "Thorin::csrf_qs(${1:string \\$name = CSRF::TOKEN_NAME})",
+    "description": "Generate a CSRF query string"
+  },
+  "Thorin::csrf_token": {
+    "prefix": "Thorin::csrf_token",
+    "body": "Thorin::csrf_token(${1:string \\$name = CSRF::TOKEN_NAME})",
+    "description": "Return the token for the given name, or the default token if no name is provided"
+  },
+  "Thorin::csrf_validate": {
+    "prefix": "Thorin::csrf_validate",
+    "body": "Thorin::csrf_validate(${1:string \\$name = CSRF::TOKEN_NAME}, ${2:array \\$request_data = null})",
+    "description": "Validate a CSRF token in a passed stack like $_POST, $_GET, or an array.\nBy default it will validate the CSRF token in the $_POST stack.\n"
+  },
+  "Thorin::session_destroy": {
+    "prefix": "Thorin::session_destroy",
+    "body": "Thorin::session_destroy()",
+    "description": "Destroy the whole session"
+  },
+  "Thorin::session_flash": {
+    "prefix": "Thorin::session_flash",
+    "body": "Thorin::session_flash(${1:string \\$key}, ${2:mixed \\$value = null})",
+    "description": "Get or set a value in session flash.\nFlash mean that the value will live until the value is accessed. Then the value is killed."
+  },
+  "Thorin::session_id": {
+    "prefix": "Thorin::session_id",
+    "body": "Thorin::session_id()",
+    "description": "Return the session id of the current session"
+  },
+  "Thorin::session": {
+    "prefix": "Thorin::session",
+    "body": "Thorin::session(${1:string \\$key}, ${2:mixed \\$value = null})",
+    "description": "Get or set a value in session\nTo delete the value, pass -1 as $value parameter"
+  },
+  "Thorin::str_clean_cut": {
+    "prefix": "Thorin::str_clean_cut",
+    "body": "Thorin::str_clean_cut(${1:string \\$string}, ${2:int \\$length}, ${3:string \\$cutString})",
+    "description": "Return a clean string with max lenght\n"
+  },
+  "Thorin::str_headslash": {
+    "prefix": "Thorin::str_headslash",
+    "body": "Thorin::str_headslash(${1:string \\$string})",
+    "description": "Make sure the passed string has a slash at the begining\n"
+  },
+  "Thorin::str_is_end_with": {
+    "prefix": "Thorin::str_is_end_with",
+    "body": "Thorin::str_is_end_with(${1:string \\$source}, ${2:string \\$with})",
+    "description": "Check if the passed string end with the other passed string"
+  },
+  "Thorin::str_is_lower_case": {
+    "prefix": "Thorin::str_is_lower_case",
+    "body": "Thorin::str_is_lower_case(${1:string \\$string})",
+    "description": "Check if the passed string is lower case"
+  },
+  "Thorin::str_is_start_with": {
+    "prefix": "Thorin::str_is_start_with",
+    "body": "Thorin::str_is_start_with(${1:string \\$source}, ${2:string \\$with})",
+    "description": "Check if the passed string start with the other passed string"
+  },
+  "Thorin::str_is_upper_case": {
+    "prefix": "Thorin::str_is_upper_case",
+    "body": "Thorin::str_is_upper_case(${1:string \\$string})",
+    "description": "Check if the passed string is upper case"
+  },
+  "Thorin::str_random": {
+    "prefix": "Thorin::str_random",
+    "body": "Thorin::str_random(${1:int \\$length})",
+    "description": "Function which generate random string\n"
+  },
+  "Thorin::str_remove_whitespaces": {
+    "prefix": "Thorin::str_remove_whitespaces",
+    "body": "Thorin::str_remove_whitespaces(${1:string \\$string})",
+    "description": "Remove all whitespaces in the passed string"
+  },
+  "Thorin::str_slug": {
+    "prefix": "Thorin::str_slug",
+    "body": "Thorin::str_slug(${1:string \\$string})",
+    "description": "Generate a slug from a string like a title or whatever"
+  },
+  "Thorin::str_tailslash": {
+    "prefix": "Thorin::str_tailslash",
+    "body": "Thorin::str_tailslash(${1:string \\$string})",
+    "description": "Make sure the passed string has a slash at the end\n"
+  },
+  "Thorin::is_timestamp_valid": {
+    "prefix": "Thorin::is_timestamp_valid",
+    "body": "Thorin::is_timestamp_valid(${1:string \\$strTimestamp})",
+    "description": "Check if timestamp is valid\n"
+  },
+  "Thorin::asset_url": {
+    "prefix": "Thorin::asset_url",
+    "body": "Thorin::asset_url(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
+    "description": "Return a url relative to the `paths.assets` and the `app.root_url` config\n"
+  },
+  "Thorin::root_url": {
+    "prefix": "Thorin::root_url",
+    "body": "Thorin::root_url(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
+    "description": "Return the root website url depending on the `app.root_url` config\n"
+  },
+  "Thorin::sanitize_url": {
+    "prefix": "Thorin::sanitize_url",
+    "body": "Thorin::sanitize_url(${1:string \\$url})",
+    "description": "Return a sanitized version of the passed path. Here's the actions applied on the path:\n- Ensure no double \"/\" in the path like http://my-domain.com/some//thing\n- Apply the filter_var function withe the FILTER_SANITIZE_URL flag"
+  },
+  "Thorin::current_url": {
+    "prefix": "Thorin::current_url",
+    "body": "Thorin::current_url()",
+    "description": "Return the current url"
+  },
+  "Thorin::define": {
+    "prefix": "Thorin::define",
+    "body": "Thorin::define(${1:string \\$name}, ${2:mixed \\$value})",
+    "description": "Define a constant if not already defined\n"
+  },
+  "Thorin::domain": {
+    "prefix": "Thorin::domain",
+    "body": "Thorin::domain()",
+    "description": "Return the domain"
+  },
+  "Thorin::env": {
+    "prefix": "Thorin::env",
+    "body": "Thorin::env(${1:string \\$name}, ${2:mixed \\$default = null})",
+    "description": "Return the environment variable that correspond to the requested one or a default value passed as a second parameter"
+  },
+  "Thorin::environment": {
+    "prefix": "Thorin::environment",
+    "body": "Thorin::environment()",
+    "description": "Return the environment set in `app.ENVIRONMENT` config"
+  },
+  "Thorin::ip_address": {
+    "prefix": "Thorin::ip_address",
+    "body": "Thorin::ip_address()",
+    "description": "Return the ip address of the user"
+  },
+  "Thorin::location": {
+    "prefix": "Thorin::location",
+    "body": "Thorin::location(${1:string \\$ip_address = null})",
+    "description": "Retreive a location from a passed ip address. If no ip address is passed,\nwill try to get the user one automaticaly.\nThis function use [ipinfo.io](https://ipinfo.io) webservice that authorize 1'000 requests per day so you are warned."
+  },
+  "Thorin::pre": {
+    "prefix": "Thorin::pre",
+    "body": "Thorin::pre(${1:array \\$array})",
+    "description": "Format/beautify array\n"
+  },
+  "Thorin::protocol": {
+    "prefix": "Thorin::protocol",
+    "body": "Thorin::protocol()",
+    "description": "Return the protocol used to request the page"
+  },
+  "Thorin::redirect_ip": {
+    "prefix": "Thorin::redirect_ip",
+    "body": "Thorin::redirect_ip(${1:array \\$ipsList}, ${2:string \\$url})",
+    "description": "Check some ip's and redirect the passed ones to the passed url"
+  },
+  "Thorin::safe_redirect": {
+    "prefix": "Thorin::safe_redirect",
+    "body": "Thorin::safe_redirect(${1:string \\$url}, ${2:boolean \\$exit = true})",
+    "description": "Redirect the user to a specific url. If the header redirect did not work, print a redirect in the html"
+  },
+  "Thorin::whois": {
+    "prefix": "Thorin::whois",
+    "body": "Thorin::whois(${1:string \\$domain})",
+    "description": "Query the whois service and return the response for the passed domain name"
+  },
+  "Thorin::_": {
+    "prefix": "Thorin::_",
+    "body": "Thorin::_()",
+    "description": "Return the lodash php class that you can use directly"
+  },
+  "Thorin::dotenv": {
+    "prefix": "Thorin::dotenv",
+    "body": "Thorin::dotenv()",
+    "description": "Return the dotenv instance used to parse the .env file at the root of the project"
+  },
+  "Thorin::faker": {
+    "prefix": "Thorin::faker",
+    "body": "Thorin::faker()",
+    "description": "Return an instance of faker with the one\nyou can call all the faker methods"
+  },
+  "Thorin::lodash": {
+    "prefix": "Thorin::lodash",
+    "body": "Thorin::lodash()",
+    "description": "Return the lodash php class that you can use directly"
+  },
+  "Thorin::mobile_detect": {
+    "prefix": "Thorin::mobile_detect",
+    "body": "Thorin::mobile_detect()",
+    "description": "Return a mobile detect instance to work with"
+  },
+  "Thorin::sh": {
+    "prefix": "Thorin::sh",
+    "body": "Thorin::sh(${1:string \\$command}, ${2:mixed \\$args...})",
+    "description": "Call a shell function and pass it some arguments.\nThis use the cool [Shellwrap](https://github.com/MrRio/shellwrap) library to work."
+  },
+  "Thorin::validator": {
+    "prefix": "Thorin::validator",
+    "body": "Thorin::validator()",
+    "description": "Return a Respect Validation class instance to work with"
+  },
+  "Thorin::render_blade": {
+    "prefix": "Thorin::render_blade",
+    "body": "Thorin::render_blade(${1:string \\$slug}, ${2:array \\$data = null})",
+    "description": "Render a view with the data passed to it and return it\n"
+  },
+  "Thorin::render_mustache": {
+    "prefix": "Thorin::render_mustache",
+    "body": "Thorin::render_mustache(${1:string \\$slug}, ${2:array \\$data = null})",
+    "description": "Render a view using mustache with the data passed to it and return the result\n"
+  },
+  "Thorin::render_twig": {
+    "prefix": "Thorin::render_twig",
+    "body": "Thorin::render_twig(${1:string \\$slug}, ${2:array \\$data = null})",
+    "description": "Render a view with the data passed to it and return it\n"
+  },
+  "Thorin::render": {
+    "prefix": "Thorin::render",
+    "body": "Thorin::render(${1:string \\$slug}, ${2:array \\$data = null})",
+    "description": "Render a view with the data passed to it and return it\n"
+  }
+}
