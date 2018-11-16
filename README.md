@@ -10,6 +10,12 @@ This extension gives you access to snippets for all the Thorin functions like:
 - `Thorin::array_any`
 - etc...
 
+## Publishing the extension
+
+1. Follow [these instructions](https://code.visualstudio.com/docs/extensions/publish-extension#_get-a-personal-access-token) to create a personal access token
+2. Make sure you are part of the [`Thorin` project](https://dev.azure.com/dwarvesforge/Thorin)
+3. The extension is published under the `Dwarvesforge` publisher in the [`Dwarvesforge` organisation](https://dev.azure.com/dwarvesforge/)
+
 <a id="readme-contribute"></a>
 ## Contribute
 
