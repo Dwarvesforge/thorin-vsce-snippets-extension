@@ -17,5 +17,10 @@
                 "path": "./snippets/snippets.json"
             }
         ]
+    },
+    "devDependencies": {
+        "coffeekraken-docblock-parser": "^1.0.10",
+        "glob-all": "^3.1.0",
+        "lodash": "^4.17.11"
     }
 }
