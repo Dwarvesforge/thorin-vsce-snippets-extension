@@ -4,6 +4,10 @@
     "description": "Dwarvesforge Thorin Visual Studio Code Snippets",
     "version": "1.1.11",
     "publisher": "Dwarvesforge",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Dwarvesforge/thorin-vsce-snippets-extension"
+    },
     "engines": {
         "vscode": "^1.29.0"
     },
