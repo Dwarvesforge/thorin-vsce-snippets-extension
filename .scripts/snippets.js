@@ -28,11 +28,11 @@ files.forEach((file) => {
 			})
 		}
 
-		let body = `Thorin::${docblock.name.substr(2)}(${args.join(', ')})`;
+		let body = `Thorin::${docblock.name}(${args.join(', ')})`;
 		let description = docblock.body
 
-		res[`Thorin::${docblock.name.substr(2)}`] = {
-			prefix: `Thorin::${docblock.name.substr(2)}`,
+		res[`Thorin::${docblock.name}`] = {
+			prefix: `Thorin::${docblock.name}`,
 			body,
 			description
 		}
