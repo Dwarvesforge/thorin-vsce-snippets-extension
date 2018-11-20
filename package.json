@@ -5,6 +5,10 @@
     "version": "2.0.2",
     "publisher": "Dwarvesforge",
     "icon": ".resources/icon.png",
+    "scripts": {
+        "build": "node .scripts/snippets.js",
+        "publish": "vsce publish"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/Dwarvesforge/thorin-vsce-snippets-extension"
