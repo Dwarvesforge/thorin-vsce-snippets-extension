@@ -1,4 +1,24 @@
 {
+  "Thorin::app_domain": {
+    "prefix": "Thorin::app_domain",
+    "body": "Thorin::app_domain()",
+    "description": "Return the application domain"
+  },
+  "Thorin::app_environment": {
+    "prefix": "Thorin::app_environment",
+    "body": "Thorin::app_environment()",
+    "description": "Return the application environment set in `app.environment` config"
+  },
+  "Thorin::app_name": {
+    "prefix": "Thorin::app_name",
+    "body": "Thorin::app_name()",
+    "description": "Return the application name"
+  },
+  "Thorin::app_protocol": {
+    "prefix": "Thorin::app_protocol",
+    "body": "Thorin::app_protocol()",
+    "description": "Return the application protocol used to request the page"
+  },
   "Thorin::array_all": {
     "prefix": "Thorin::array_all",
     "body": "Thorin::array_all(${1:array \\$items}, ${2:callable \\$func})",
@@ -1004,6 +1024,11 @@
     "body": "Thorin::url_asset(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
     "description": "Return a url relative to the `path.assets` and the `app.root_url` config\n"
   },
+  "Thorin::url_current": {
+    "prefix": "Thorin::url_current",
+    "body": "Thorin::url_current()",
+    "description": "Return the current url\n"
+  },
   "Thorin::url_domain": {
     "prefix": "Thorin::url_domain",
     "body": "Thorin::url_domain(${1:string \\$url = null})",
@@ -1034,6 +1059,11 @@
     "body": "Thorin::url_segments(${1:string \\$url = null})",
     "description": "Get segments of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
   },
+  "Thorin::url_shorten": {
+    "prefix": "Thorin::url_shorten",
+    "body": "Thorin::url_shorten(${1:string \\$url})",
+    "description": "Shorten a url using the tinyurl service\n"
+  },
   "Thorin::url_subdomain": {
     "prefix": "Thorin::url_subdomain",
     "body": "Thorin::url_subdomain(${1:string \\$url = null})",
@@ -1044,30 +1074,15 @@
     "body": "Thorin::url_tld(${1:string \\$url = null})",
     "description": "Get top level domain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
   },
-  "Thorin::current_url": {
-    "prefix": "Thorin::current_url",
-    "body": "Thorin::current_url()",
-    "description": "Return the current url"
-  },
   "Thorin::define": {
     "prefix": "Thorin::define",
     "body": "Thorin::define(${1:string \\$name}, ${2:mixed \\$value})",
     "description": "Define a constant if not already defined\n"
   },
-  "Thorin::domain": {
-    "prefix": "Thorin::domain",
-    "body": "Thorin::domain()",
-    "description": "Return the domain"
-  },
   "Thorin::env": {
     "prefix": "Thorin::env",
     "body": "Thorin::env(${1:string \\$name}, ${2:mixed \\$default = null})",
     "description": "Return the environment variable that correspond to the requested one or a default value passed as a second parameter"
-  },
-  "Thorin::environment": {
-    "prefix": "Thorin::environment",
-    "body": "Thorin::environment()",
-    "description": "Return the environment set in `app.ENVIRONMENT` config"
   },
   "Thorin::eq": {
     "prefix": "Thorin::eq",
@@ -1088,11 +1103,6 @@
     "prefix": "Thorin::pre",
     "body": "Thorin::pre(${1:array \\$array})",
     "description": "Format/beautify array\n"
-  },
-  "Thorin::protocol": {
-    "prefix": "Thorin::protocol",
-    "body": "Thorin::protocol()",
-    "description": "Return the protocol used to request the page"
   },
   "Thorin::redirect_ip": {
     "prefix": "Thorin::redirect_ip",
