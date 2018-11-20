@@ -4,10 +4,10 @@ PHP toolkit that offers you some nice helpers, missing functions, advanced capab
 
 This extension gives you access to snippets for all the Thorin functions like:
 
-- `Thorin::archive_files`
-- `Thorin::extract_files`
 - `Thorin::array_all`
 - `Thorin::array_any`
+- `Thorin::fs_archive_files`
+- `Thorin::fs_extract_files`
 - etc...
 
 ## Publishing the extension

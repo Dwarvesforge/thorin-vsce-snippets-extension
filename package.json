@@ -2,7 +2,7 @@
     "name": "dwarvesforge-thorin-snippets",
     "displayName": "Dwarvesforge Thorin Snippets",
     "description": "Dwarvesforge Thorin Visual Studio Code Snippets",
-    "version": "1.1.13",
+    "version": "2.0.0",
     "publisher": "Dwarvesforge",
     "icon": ".resources/icon.png",
     "repository": {
