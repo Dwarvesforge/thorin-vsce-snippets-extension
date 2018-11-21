@@ -4,11 +4,6 @@
     "body": "Thorin::app_domain()",
     "description": "Return the application domain"
   },
-  "Thorin::app_environment": {
-    "prefix": "Thorin::app_environment",
-    "body": "Thorin::app_environment()",
-    "description": "Return the application environment set in `app.environment` config"
-  },
   "Thorin::app_name": {
     "prefix": "Thorin::app_name",
     "body": "Thorin::app_name()",
@@ -364,129 +359,129 @@
     "body": "Thorin::to_boolean(${1:string \\$var})",
     "description": "Convert variable to boolean\n"
   },
-  "Thorin::col_count_by": {
-    "prefix": "Thorin::col_count_by",
-    "body": "Thorin::col_count_by(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
-    "description": "Creates an array composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The corresponding value of\neach key is the number of times the key was returned by `iteratee`. The\niteratee is invoked with one argument: (value).\n"
-  },
-  "Thorin::col_each_right": {
-    "prefix": "Thorin::col_each_right",
-    "body": "Thorin::col_each_right(${1:array|iterable|object \\$collection}, ${2:callable \\$iteratee})",
-    "description": "This method is like `Thorin::col_each` except that it iterates over elements of\n`collection` from right to left.\n"
-  },
-  "Thorin::col_each": {
-    "prefix": "Thorin::col_each",
-    "body": "Thorin::col_each(${1:array|iterable|object \\$collection}, ${2:callable \\$itaratee})",
-    "description": "Iterates over elements of `collection` and invokes `iteratee` for each element.\nThe iteratee is invoked with three arguments: (value, index|key, collection).\nIteratee functions may exit iteration early by explicitly returning `false`.\n\n**Note:** As with other \"Collections\" methods, objects with a \"length\"\nproperty are iterated like arrays. To avoid this behavior use `forIn`\nor `forOwn` for object iteration.\n"
-  },
-  "Thorin::col_every": {
-    "prefix": "Thorin::col_every",
-    "body": "Thorin::col_every(${1:iterable \\$collection}, ${2:callable \\$predicate})",
-    "description": "Checks if `predicate` returns truthy for **all** elements of `array`.\nIteration is stopped once `predicate` returns falsey. The predicate is\ninvoked with three arguments: (value, index, array).\n\n**Note:** This method returns `true` for\n[empty arrays](https://en.wikipedia.org/wiki/Empty_set) because\n[everything is true](https://en.wikipedia.org/wiki/Vacuous_truth) of\nelements of empty arrays.\n"
-  },
-  "Thorin::col_extend": {
-    "prefix": "Thorin::col_extend",
-    "body": "Thorin::col_extend(${1:array|object \\$a}, ${2:array|object \\$b}, ${3:boolean \\$deep = true}, ${4:boolean \\$extendNonAssociativeArrays = true})",
-    "description": "Extend an array or an object either deeply or not"
-  },
-  "Thorin::col_filter": {
-    "prefix": "Thorin::col_filter",
-    "body": "Thorin::col_filter(${1:iterable \\$array}, ${2:callable \\$predicate})",
-    "description": "Iterates over elements of `array`, returning an array of all elements\n`predicate` returns truthy for. The predicate is invoked with three\narguments: (value, index, array).\n"
-  },
-  "Thorin::col_find_last": {
-    "prefix": "Thorin::col_find_last",
-    "body": "Thorin::col_find_last(${1:itarable \\$collection}, ${2:callable \\$predicate}, ${3:integer \\$fromIndex = 0})",
-    "description": "This method is like `Thorin::col_find` except that it iterates over elements of\n`collection` from right to left.\n"
-  },
-  "Thorin::col_find": {
-    "prefix": "Thorin::col_find",
-    "body": "Thorin::col_find(${1:itarable \\$collection}, ${2:callable \\$predicate}, ${3:integer \\$fromIndex = 0})",
-    "description": "Iterates over elements of `collection`, returning the first element\n`predicate` returns truthy for. The predicate is invoked with three\narguments: (value, index|key, collection).\n"
-  },
-  "Thorin::col_flat_map_deep": {
-    "prefix": "Thorin::col_flat_map_deep",
-    "body": "Thorin::col_flat_map_deep(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
-    "description": "This method is like `flatMap` except that it recursively flattens the\nmapped results.\n"
-  },
-  "Thorin::col_flat_map_depth": {
-    "prefix": "Thorin::col_flat_map_depth",
-    "body": "Thorin::col_flat_map_depth(${1:iterable \\$collection}, ${2:callable \\$iteratee}, ${3:integer \\$depth = 1})",
-    "description": "This method is like `flatMap` except that it recursively flattens the\nmapped results up to `depth` times.\n"
-  },
-  "Thorin::col_flat_map": {
-    "prefix": "Thorin::col_flat_map",
-    "body": "Thorin::col_flat_map(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
-    "description": "Creates a flattened array of values by running each element in `collection`\nthrough `iteratee` and flattening the mapped results. The iteratee is invoked\nwith three arguments: (value, index|key, collection).\n"
-  },
-  "Thorin::col_group_by": {
-    "prefix": "Thorin::col_group_by",
-    "body": "Thorin::col_group_by(${1:itarable \\$collection}, ${2:callable \\$iteratee})",
-    "description": "Creates an array composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The order of grouped values\nis determined by the order they occur in `collection`. The corresponding\nvalue of each key is an array of elements responsible for generating the\nkey. The iteratee is invoked with one argument: (value).\n"
-  },
-  "Thorin::col_invoke_map": {
-    "prefix": "Thorin::col_invoke_map",
-    "body": "Thorin::col_invoke_map(${1:itarable \\$collection}, ${2:array|callable|string \\$path}, ${3:array \\$args = []})",
-    "description": "Invokes the method at `path` of each element in `collection`, returning\nan array of the results of each invoked method. Any additional arguments\nare provided to each invoked method. If `path` is a function, it's invoked\nfor, and `this` bound to, each element in `collection`.\n"
-  },
-  "Thorin::col_key_by": {
-    "prefix": "Thorin::col_key_by",
-    "body": "Thorin::col_key_by(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
-    "description": "Creates an object composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The corresponding value of\neach key is the last element responsible for generating the key. The\niteratee is invoked with one argument: (value).\n"
-  },
-  "Thorin::col_map": {
-    "prefix": "Thorin::col_map",
-    "body": "Thorin::col_map(${1:array|object \\$collection}, ${2:callable|string|array \\$iteratee})",
-    "description": "Creates an array of values by running each element in `collection` through\n`iteratee`. The iteratee is invoked with three arguments:\n(value, index|key, collection).\n"
-  },
-  "Thorin::col_order_by": {
-    "prefix": "Thorin::col_order_by",
-    "body": "Thorin::col_order_by(${1:iterable|null \\$collection}, ${2:array|callable|string \\$iteratee}, ${3:array \\$orders})",
-    "description": "This method is like `Thorin::col_sort_by` except that it allows specifying the sort\norders of the iteratees to sort by. If `orders` is unspecified, all values\nare sorted in ascending order. Otherwise, specify an order of \"desc\" for\ndescending or \"asc\" for ascending sort order of corresponding values.\n"
-  },
-  "Thorin::col_partition": {
-    "prefix": "Thorin::col_partition",
-    "body": "Thorin::col_partition(${1:iterable \\$collection}, ${2:callable \\$predicate})",
-    "description": "Creates an array of elements split into two groups, the first of which\ncontains elements `predicate` returns truthy for, the second of which\ncontains elements `predicate` returns falsey for. The predicate is\ninvoked with one argument: (value).\n"
-  },
-  "Thorin::col_reduce_right": {
-    "prefix": "Thorin::col_reduce_right",
-    "body": "Thorin::col_reduce_right(${1:iterable \\$collection}, ${2:mixed \\$iteratee}, ${3:mixed \\$accumulator = null})",
-    "description": "This method is like `Thorin::col_reduce` except that it iterates over elements of\n`collection` from right to left.\n"
-  },
-  "Thorin::col_reduce": {
-    "prefix": "Thorin::col_reduce",
-    "body": "Thorin::col_reduce(${1:iterable \\$collection}, ${2:mixed \\$iteratee}, ${3:mixed \\$accumulator = null})",
-    "description": "Reduces `collection` to a value which is the accumulated result of running\neach element in `collection` thru `iteratee`, where each successive\ninvocation is supplied the return value of the previous. If `accumulator`\nis not given, the first element of `collection` is used as the initial\nvalue. The iteratee is invoked with four arguments:\n(accumulator, value, index|key, collection).\n"
-  },
-  "Thorin::col_reject": {
-    "prefix": "Thorin::col_reject",
-    "body": "Thorin::col_reject(${1:iterable \\$collection}, ${2:callable \\$predicate})",
-    "description": "The opposite of `Thorin::col_filter` this method returns the elements of `collection`\nthat `predicate` does **not** return truthy for.\n"
-  },
-  "Thorin::col_size": {
-    "prefix": "Thorin::col_size",
-    "body": "Thorin::col_size(${1:array|object|string \\$collection})",
-    "description": "Gets the size of `collection` by returning its length for array\nvalues or the number of public properties for objects.\n"
-  },
-  "Thorin::col_some": {
-    "prefix": "Thorin::col_some",
-    "body": "Thorin::col_some(${1:iterable \\$collection}, ${2:callable|string|array \\$predicate})",
-    "description": "Checks if `predicate` returns truthy for **any** element of `collection`.\nIteration is stopped once `predicate` returns truthy. The predicate is\ninvoked with three arguments: (value, index|key, collection).\n"
-  },
-  "Thorin::col_sort_by": {
-    "prefix": "Thorin::col_sort_by",
-    "body": "Thorin::col_sort_by(${1:array|object \\$collection}, ${2:callable|callable[] \\$iteratees})",
-    "description": "Creates an array of elements, sorted in ascending order by the results of\nrunning each element in a collection through each iteratee. This method\nperforms a stable sort, that is, it preserves the original sort order of\nequal elements. The iteratees are invoked with one argument: (value).\n"
-  },
   "Thorin::collect": {
     "prefix": "Thorin::collect",
     "body": "Thorin::collect(${1:array \\$array})",
     "description": "Create a [collection instance](https://laravel.com/docs/5.7/collections#available-methods) to work with from the passed array."
   },
-  "Thorin::color_random": {
-    "prefix": "Thorin::color_random",
-    "body": "Thorin::color_random()",
+  "Thorin::count_by": {
+    "prefix": "Thorin::count_by",
+    "body": "Thorin::count_by(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
+    "description": "Creates an array composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The corresponding value of\neach key is the number of times the key was returned by `iteratee`. The\niteratee is invoked with one argument: (value).\n"
+  },
+  "Thorin::each_right": {
+    "prefix": "Thorin::each_right",
+    "body": "Thorin::each_right(${1:array|iterable|object \\$collection}, ${2:callable \\$iteratee})",
+    "description": "This method is like `Thorin::col_each` except that it iterates over elements of\n`collection` from right to left.\n"
+  },
+  "Thorin::each": {
+    "prefix": "Thorin::each",
+    "body": "Thorin::each(${1:array|iterable|object \\$collection}, ${2:callable \\$itaratee})",
+    "description": "Iterates over elements of `collection` and invokes `iteratee` for each element.\nThe iteratee is invoked with three arguments: (value, index|key, collection).\nIteratee functions may exit iteration early by explicitly returning `false`.\n\n**Note:** As with other \"Collections\" methods, objects with a \"length\"\nproperty are iterated like arrays. To avoid this behavior use `forIn`\nor `forOwn` for object iteration.\n"
+  },
+  "Thorin::every": {
+    "prefix": "Thorin::every",
+    "body": "Thorin::every(${1:iterable \\$collection}, ${2:callable \\$predicate})",
+    "description": "Checks if `predicate` returns truthy for **all** elements of `array`.\nIteration is stopped once `predicate` returns falsey. The predicate is\ninvoked with three arguments: (value, index, array).\n\n**Note:** This method returns `true` for\n[empty arrays](https://en.wikipedia.org/wiki/Empty_set) because\n[everything is true](https://en.wikipedia.org/wiki/Vacuous_truth) of\nelements of empty arrays.\n"
+  },
+  "Thorin::extend": {
+    "prefix": "Thorin::extend",
+    "body": "Thorin::extend(${1:array|object \\$a}, ${2:array|object \\$b}, ${3:boolean \\$deep = true}, ${4:boolean \\$extendNonAssociativeArrays = true})",
+    "description": "Extend an array or an object either deeply or not"
+  },
+  "Thorin::filter": {
+    "prefix": "Thorin::filter",
+    "body": "Thorin::filter(${1:iterable \\$array}, ${2:callable \\$predicate})",
+    "description": "Iterates over elements of `array`, returning an array of all elements\n`predicate` returns truthy for. The predicate is invoked with three\narguments: (value, index, array).\n"
+  },
+  "Thorin::find_last": {
+    "prefix": "Thorin::find_last",
+    "body": "Thorin::find_last(${1:itarable \\$collection}, ${2:callable \\$predicate}, ${3:integer \\$fromIndex = 0})",
+    "description": "This method is like `Thorin::col_find` except that it iterates over elements of\n`collection` from right to left.\n"
+  },
+  "Thorin::find": {
+    "prefix": "Thorin::find",
+    "body": "Thorin::find(${1:itarable \\$collection}, ${2:callable \\$predicate}, ${3:integer \\$fromIndex = 0})",
+    "description": "Iterates over elements of `collection`, returning the first element\n`predicate` returns truthy for. The predicate is invoked with three\narguments: (value, index|key, collection).\n"
+  },
+  "Thorin::flat_map_deep": {
+    "prefix": "Thorin::flat_map_deep",
+    "body": "Thorin::flat_map_deep(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
+    "description": "This method is like `flatMap` except that it recursively flattens the\nmapped results.\n"
+  },
+  "Thorin::flat_map_depth": {
+    "prefix": "Thorin::flat_map_depth",
+    "body": "Thorin::flat_map_depth(${1:iterable \\$collection}, ${2:callable \\$iteratee}, ${3:integer \\$depth = 1})",
+    "description": "This method is like `flatMap` except that it recursively flattens the\nmapped results up to `depth` times.\n"
+  },
+  "Thorin::flat_map": {
+    "prefix": "Thorin::flat_map",
+    "body": "Thorin::flat_map(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
+    "description": "Creates a flattened array of values by running each element in `collection`\nthrough `iteratee` and flattening the mapped results. The iteratee is invoked\nwith three arguments: (value, index|key, collection).\n"
+  },
+  "Thorin::group_by": {
+    "prefix": "Thorin::group_by",
+    "body": "Thorin::group_by(${1:itarable \\$collection}, ${2:callable \\$iteratee})",
+    "description": "Creates an array composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The order of grouped values\nis determined by the order they occur in `collection`. The corresponding\nvalue of each key is an array of elements responsible for generating the\nkey. The iteratee is invoked with one argument: (value).\n"
+  },
+  "Thorin::invoke_map": {
+    "prefix": "Thorin::invoke_map",
+    "body": "Thorin::invoke_map(${1:itarable \\$collection}, ${2:array|callable|string \\$path}, ${3:array \\$args = []})",
+    "description": "Invokes the method at `path` of each element in `collection`, returning\nan array of the results of each invoked method. Any additional arguments\nare provided to each invoked method. If `path` is a function, it's invoked\nfor, and `this` bound to, each element in `collection`.\n"
+  },
+  "Thorin::key_by": {
+    "prefix": "Thorin::key_by",
+    "body": "Thorin::key_by(${1:iterable \\$collection}, ${2:callable \\$iteratee})",
+    "description": "Creates an object composed of keys generated from the results of running\neach element of `collection` through `iteratee`. The corresponding value of\neach key is the last element responsible for generating the key. The\niteratee is invoked with one argument: (value).\n"
+  },
+  "Thorin::map": {
+    "prefix": "Thorin::map",
+    "body": "Thorin::map(${1:array|object \\$collection}, ${2:callable|string|array \\$iteratee})",
+    "description": "Creates an array of values by running each element in `collection` through\n`iteratee`. The iteratee is invoked with three arguments:\n(value, index|key, collection).\n"
+  },
+  "Thorin::order_by": {
+    "prefix": "Thorin::order_by",
+    "body": "Thorin::order_by(${1:iterable|null \\$collection}, ${2:array|callable|string \\$iteratee}, ${3:array \\$orders})",
+    "description": "This method is like `Thorin::col_sort_by` except that it allows specifying the sort\norders of the iteratees to sort by. If `orders` is unspecified, all values\nare sorted in ascending order. Otherwise, specify an order of \"desc\" for\ndescending or \"asc\" for ascending sort order of corresponding values.\n"
+  },
+  "Thorin::partition": {
+    "prefix": "Thorin::partition",
+    "body": "Thorin::partition(${1:iterable \\$collection}, ${2:callable \\$predicate})",
+    "description": "Creates an array of elements split into two groups, the first of which\ncontains elements `predicate` returns truthy for, the second of which\ncontains elements `predicate` returns falsey for. The predicate is\ninvoked with one argument: (value).\n"
+  },
+  "Thorin::reduce_right": {
+    "prefix": "Thorin::reduce_right",
+    "body": "Thorin::reduce_right(${1:iterable \\$collection}, ${2:mixed \\$iteratee}, ${3:mixed \\$accumulator = null})",
+    "description": "This method is like `Thorin::col_reduce` except that it iterates over elements of\n`collection` from right to left.\n"
+  },
+  "Thorin::reduce": {
+    "prefix": "Thorin::reduce",
+    "body": "Thorin::reduce(${1:iterable \\$collection}, ${2:mixed \\$iteratee}, ${3:mixed \\$accumulator = null})",
+    "description": "Reduces `collection` to a value which is the accumulated result of running\neach element in `collection` thru `iteratee`, where each successive\ninvocation is supplied the return value of the previous. If `accumulator`\nis not given, the first element of `collection` is used as the initial\nvalue. The iteratee is invoked with four arguments:\n(accumulator, value, index|key, collection).\n"
+  },
+  "Thorin::reject": {
+    "prefix": "Thorin::reject",
+    "body": "Thorin::reject(${1:iterable \\$collection}, ${2:callable \\$predicate})",
+    "description": "The opposite of `Thorin::col_filter` this method returns the elements of `collection`\nthat `predicate` does **not** return truthy for.\n"
+  },
+  "Thorin::size": {
+    "prefix": "Thorin::size",
+    "body": "Thorin::size(${1:array|object|string \\$collection})",
+    "description": "Gets the size of `collection` by returning its length for array\nvalues or the number of public properties for objects.\n"
+  },
+  "Thorin::some": {
+    "prefix": "Thorin::some",
+    "body": "Thorin::some(${1:iterable \\$collection}, ${2:callable|string|array \\$predicate})",
+    "description": "Checks if `predicate` returns truthy for **any** element of `collection`.\nIteration is stopped once `predicate` returns truthy. The predicate is\ninvoked with three arguments: (value, index|key, collection).\n"
+  },
+  "Thorin::sort_by": {
+    "prefix": "Thorin::sort_by",
+    "body": "Thorin::sort_by(${1:array|object \\$collection}, ${2:callable|callable[] \\$iteratees})",
+    "description": "Creates an array of elements, sorted in ascending order by the results of\nrunning each element in a collection through each iteratee. This method\nperforms a stable sort, that is, it preserves the original sort order of\nequal elements. The iteratees are invoked with one argument: (value).\n"
+  },
+  "Thorin::random_color": {
+    "prefix": "Thorin::random_color",
+    "body": "Thorin::random_color()",
     "description": "Generate a randon hexadecimal color like \"F4A342\""
   },
   "Thorin::config_path": {
@@ -499,9 +494,9 @@
     "body": "Thorin::config(${1:string \\$path})",
     "description": "Get a configuration depending on the path passed"
   },
-  "Thorin::date_now": {
-    "prefix": "Thorin::date_now",
-    "body": "Thorin::date_now()",
+  "Thorin::now": {
+    "prefix": "Thorin::now",
+    "body": "Thorin::now()",
     "description": "Gets the timestamp of the number of milliseconds that have elapsed since the Unix epoch (1 January 1970 00:00:00 UTC).\n"
   },
   "Thorin::db_boot_eloquent": {
@@ -534,155 +529,155 @@
     "body": "Thorin::email_has_mx(${1:string \\$email})",
     "description": "Check if the passed email address has some mx configurated.\n"
   },
-  "Thorin::email_mailer_config": {
-    "prefix": "Thorin::email_mailer_config",
-    "body": "Thorin::email_mailer_config(${1:string \\$name = null})",
+  "Thorin::mailer_config": {
+    "prefix": "Thorin::mailer_config",
+    "body": "Thorin::mailer_config(${1:string \\$name = null})",
     "description": "Return a mailer configuration array"
   },
-  "Thorin::email_mailer_factory": {
-    "prefix": "Thorin::email_mailer_factory",
-    "body": "Thorin::email_mailer_factory(${1:string \\$name = null})",
+  "Thorin::mailer_factory": {
+    "prefix": "Thorin::mailer_factory",
+    "body": "Thorin::mailer_factory(${1:string \\$name = null})",
     "description": "Return a mailer [PHPMailer](https://github.com/PHPMailer/PHPMailer) instance of the requested mailer registered in the `email` config file"
   },
-  "Thorin::email_mailer": {
-    "prefix": "Thorin::email_mailer",
-    "body": "Thorin::email_mailer(${1:string \\$mailer = null})",
+  "Thorin::mailer": {
+    "prefix": "Thorin::mailer",
+    "body": "Thorin::mailer(${1:string \\$mailer = null})",
     "description": "Return a mailer [PHPMailer](https://github.com/PHPMailer/PHPMailer) instance of the requested mailer registered in the `email` config file"
   },
-  "Thorin::event_emitter": {
-    "prefix": "Thorin::event_emitter",
-    "body": "Thorin::event_emitter(${1:string \\$name = \"default\"})",
+  "Thorin::emitter": {
+    "prefix": "Thorin::emitter",
+    "body": "Thorin::emitter(${1:string \\$name = \"default\"})",
     "description": "Return a [League\\Event\\Emitter](http://event.thephpleague.com/2.0/emitter/basic-usage/) instance to work with."
   },
-  "Thorin::fs_archive_files": {
-    "prefix": "Thorin::fs_archive_files",
-    "body": "Thorin::fs_archive_files(${1:string|array \\$files}, ${2:string \\$archive})",
+  "Thorin::archive_files": {
+    "prefix": "Thorin::archive_files",
+    "body": "Thorin::archive_files(${1:string|array \\$files}, ${2:string \\$archive})",
     "description": "Create an archive with some files/folders"
   },
-  "Thorin::fs_dir_size": {
-    "prefix": "Thorin::fs_dir_size",
-    "body": "Thorin::fs_dir_size(${1:string \\$directory_path})",
+  "Thorin::dir_size": {
+    "prefix": "Thorin::dir_size",
+    "body": "Thorin::dir_size(${1:string \\$directory_path})",
     "description": "Calculate a directory size"
   },
-  "Thorin::fs_disk_config": {
-    "prefix": "Thorin::fs_disk_config",
-    "body": "Thorin::fs_disk_config(${1:string \\$name = \"base\"})",
+  "Thorin::disk_config": {
+    "prefix": "Thorin::disk_config",
+    "body": "Thorin::disk_config(${1:string \\$name = \"base\"})",
     "description": "Return a disk configuration array"
   },
-  "Thorin::fs_disk_factory": {
-    "prefix": "Thorin::fs_disk_factory",
-    "body": "Thorin::fs_disk_factory(${1:string \\$disk = null})",
+  "Thorin::disk_factory": {
+    "prefix": "Thorin::disk_factory",
+    "body": "Thorin::disk_factory(${1:string \\$disk = null})",
     "description": "Create a filesystem instance with the disk requested. Return a [Flysystem](https://flysystem.thephpleague.com/docs/usage/filesystem-api/) instance to work with.\nIf no disk is passed, the default one in the config filsystem.default_disk will be used."
   },
-  "Thorin::fs_disk": {
-    "prefix": "Thorin::fs_disk",
-    "body": "Thorin::fs_disk(${1:string \\$name})",
+  "Thorin::disk": {
+    "prefix": "Thorin::disk",
+    "body": "Thorin::disk(${1:string \\$name})",
     "description": "Return a filesystem [Flysystem](http://flysystem.thephpleague.com/docs/) instance of the requested disk"
   },
-  "Thorin::fs_disks": {
-    "prefix": "Thorin::fs_disks",
-    "body": "Thorin::fs_disks(${1:string \\$disks...})",
+  "Thorin::disks": {
+    "prefix": "Thorin::disks",
+    "body": "Thorin::disks(${1:string \\$disks...})",
     "description": "Mount some disks inside a manager and return a [League\\Flysystem\\MountManager](https://flysystem.thephpleague.com/docs/advanced/mount-manager/) instance to work with."
   },
-  "Thorin::fs_extract_files": {
-    "prefix": "Thorin::fs_extract_files",
-    "body": "Thorin::fs_extract_files(${1:string \\$archive}, ${2:string \\$output})",
+  "Thorin::extract_files": {
+    "prefix": "Thorin::extract_files",
+    "body": "Thorin::extract_files(${1:string \\$archive}, ${2:string \\$output})",
     "description": "Extract an archive file in an output folder"
   },
-  "Thorin::fs_file_ext": {
-    "prefix": "Thorin::fs_file_ext",
-    "body": "Thorin::fs_file_ext(${1:string \\$filepath})",
+  "Thorin::file_ext": {
+    "prefix": "Thorin::file_ext",
+    "body": "Thorin::file_ext(${1:string \\$filepath})",
     "description": "Return the extension of the file path passed"
   },
-  "Thorin::fs_force_download": {
-    "prefix": "Thorin::fs_force_download",
-    "body": "Thorin::fs_force_download(${1:string \\$filepath}, ${2:string \\$filename})",
+  "Thorin::force_download": {
+    "prefix": "Thorin::force_download",
+    "body": "Thorin::force_download(${1:string \\$filepath}, ${2:string \\$filename})",
     "description": "Force download the passed file with the passed name"
   },
-  "Thorin::fs_human_filesize": {
-    "prefix": "Thorin::fs_human_filesize",
-    "body": "Thorin::fs_human_filesize(${1:integer \\$filesize})",
+  "Thorin::human_filesize": {
+    "prefix": "Thorin::human_filesize",
+    "body": "Thorin::human_filesize(${1:integer \\$filesize})",
     "description": "Convert a filesize into a human readable filesize like 10 TO, etc..."
   },
-  "Thorin::fn_compose": {
-    "prefix": "Thorin::fn_compose",
-    "body": "Thorin::fn_compose(${1:callable ...\\$functions})",
+  "Thorin::compose": {
+    "prefix": "Thorin::compose",
+    "body": "Thorin::compose(${1:callable ...\\$functions})",
     "description": "Return a new function that composes multiple functions into a single callable."
   },
-  "Thorin::fn_curry": {
-    "prefix": "Thorin::fn_curry",
-    "body": "Thorin::fn_curry(${1:callable \\$function})",
+  "Thorin::curry": {
+    "prefix": "Thorin::curry",
+    "body": "Thorin::curry(${1:callable \\$function})",
     "description": "Curries a function to take arguments in multiple calls."
   },
-  "Thorin::fn_memoize": {
-    "prefix": "Thorin::fn_memoize",
-    "body": "Thorin::fn_memoize(${1:callable \\$func})",
+  "Thorin::memoize": {
+    "prefix": "Thorin::memoize",
+    "body": "Thorin::memoize(${1:callable \\$func})",
     "description": "Memoization of a function results in memory."
   },
-  "Thorin::fn_negate": {
-    "prefix": "Thorin::fn_negate",
-    "body": "Thorin::fn_negate(${1:callable \\$predicate})",
+  "Thorin::negate": {
+    "prefix": "Thorin::negate",
+    "body": "Thorin::negate(${1:callable \\$predicate})",
     "description": "Creates a function that negates the result of the predicate `func`\n"
   },
-  "Thorin::hook_add_action": {
-    "prefix": "Thorin::hook_add_action",
-    "body": "Thorin::hook_add_action(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
+  "Thorin::add_action": {
+    "prefix": "Thorin::add_action",
+    "body": "Thorin::add_action(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
     "description": "Add an action linked to a callback that will be called when the `t_do_action` with the same name is called."
   },
-  "Thorin::hook_add_filter": {
-    "prefix": "Thorin::hook_add_filter",
-    "body": "Thorin::hook_add_filter(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
+  "Thorin::add_filter": {
+    "prefix": "Thorin::add_filter",
+    "body": "Thorin::add_filter(${1:string \\$name}, ${2:callable \\$callback}, ${3:integer \\$priority = 10}, ${4:integer \\$accepted_args = 1})",
     "description": "Hooks a function or method to a specific filter action."
   },
-  "Thorin::hook_apply_filters": {
-    "prefix": "Thorin::hook_apply_filters",
-    "body": "Thorin::hook_apply_filters(${1:string \\$name}, ${2:mixed \\$value}, ${3:mixed \\$var...})",
+  "Thorin::apply_filters": {
+    "prefix": "Thorin::apply_filters",
+    "body": "Thorin::apply_filters(${1:string \\$name}, ${2:mixed \\$value}, ${3:mixed \\$var...})",
     "description": "Call the functions added to a filter hook."
   },
-  "Thorin::hook_do_action": {
-    "prefix": "Thorin::hook_do_action",
-    "body": "Thorin::hook_do_action(${1:string \\$name}, ${2:mixed \\$args...})",
+  "Thorin::do_action": {
+    "prefix": "Thorin::do_action",
+    "body": "Thorin::do_action(${1:string \\$name}, ${2:mixed \\$args...})",
     "description": "Execute all the corresponding actions registered with the `t_add_action` function."
   },
-  "Thorin::i18n_available_languages": {
-    "prefix": "Thorin::i18n_available_languages",
-    "body": "Thorin::i18n_available_languages()",
+  "Thorin::available_languages": {
+    "prefix": "Thorin::available_languages",
+    "body": "Thorin::available_languages()",
     "description": "Return the available languages set in configuration\n"
   },
-  "Thorin::i18n_browser_language": {
-    "prefix": "Thorin::i18n_browser_language",
-    "body": "Thorin::i18n_browser_language()",
+  "Thorin::browser_language": {
+    "prefix": "Thorin::browser_language",
+    "body": "Thorin::browser_language()",
     "description": "Return the browser language if exist, otherwise, return false\n"
   },
-  "Thorin::i18n_default_language": {
-    "prefix": "Thorin::i18n_default_language",
-    "body": "Thorin::i18n_default_language()",
+  "Thorin::default_language": {
+    "prefix": "Thorin::default_language",
+    "body": "Thorin::default_language()",
     "description": "Return the default language set in configuration\n"
   },
-  "Thorin::i18n_language": {
-    "prefix": "Thorin::i18n_language",
-    "body": "Thorin::i18n_language(${1:array \\$available = Thorin::config('i18n.available_languages')}, ${2:string \\$default = Thorin::config('i18n.default_language')}, ${3:string \\$getParam = \"lang\"})",
-    "description": "Return the two character language code found in the browser language or in\na $_GET parameter using the $gerParam variable name.\n"
-  },
-  "Thorin::i18n": {
-    "prefix": "Thorin::i18n",
-    "body": "Thorin::i18n(${1:string \\$path}, ${2:string \\$lang = null})",
+  "Thorin::lang": {
+    "prefix": "Thorin::lang",
+    "body": "Thorin::lang(${1:string \\$path}, ${2:string \\$lang = null})",
     "description": "Return a value from the lang files. First part of the path define the file to pick the language string from.\nExemple : `newsletter.title` will load the `newsletter` file and search for the `title` inside."
   },
-  "Thorin::image_average_color": {
-    "prefix": "Thorin::image_average_color",
-    "body": "Thorin::image_average_color(${1:string \\$filePath})",
-    "description": "Get the average color of an image in hexadecimal format like \"45A3F3\""
+  "Thorin::language": {
+    "prefix": "Thorin::language",
+    "body": "Thorin::language(${1:array \\$available = Thorin::config('i18n.available_languages')}, ${2:string \\$default = Thorin::config('i18n.default_language')}, ${3:string \\$getParam = \"lang\"})",
+    "description": "Return the two character language code found in the browser language or in\na $_GET parameter using the $gerParam variable name.\n"
   },
-  "Thorin::image_optimize": {
-    "prefix": "Thorin::image_optimize",
-    "body": "Thorin::image_optimize(${1:string \\$path}, ${2:string \\$saveTo = null}, ${3:object \\$settings = {}})",
-    "description": "Optimize the passed image by compressing (resize and quality) it."
+  "Thorin::average_image_color": {
+    "prefix": "Thorin::average_image_color",
+    "body": "Thorin::average_image_color(${1:string \\$filePath})",
+    "description": "Get the average color of an image in hexadecimal format like \"45A3F3\""
   },
   "Thorin::image": {
     "prefix": "Thorin::image",
     "body": "Thorin::image(${1:string \\$path})",
     "description": "Return an Intervention Image instance to work with"
+  },
+  "Thorin::optimize_image": {
+    "prefix": "Thorin::optimize_image",
+    "body": "Thorin::optimize_image(${1:string \\$path}, ${2:string \\$saveTo = null}, ${3:object \\$settings = {}})",
+    "description": "Optimize the passed image by compressing (resize and quality) it."
   },
   "Thorin::is_ajax_request": {
     "prefix": "Thorin::is_ajax_request",
@@ -769,54 +764,54 @@
     "body": "Thorin::is_timestamp_valid(${1:string \\$strTimestamp})",
     "description": "Check if timestamp is valid\n"
   },
-  "Thorin::media_embed": {
-    "prefix": "Thorin::media_embed",
-    "body": "Thorin::media_embed(${1:string \\$url})",
+  "Thorin::embed": {
+    "prefix": "Thorin::embed",
+    "body": "Thorin::embed(${1:string \\$url})",
     "description": "Get the embed code for the passed url\n"
   },
-  "Thorin::num_clamp": {
-    "prefix": "Thorin::num_clamp",
-    "body": "Thorin::num_clamp(${1:number \\$number}, ${2:number \\$lower}, ${3:number \\$upper})",
+  "Thorin::clamp": {
+    "prefix": "Thorin::clamp",
+    "body": "Thorin::clamp(${1:number \\$number}, ${2:number \\$lower}, ${3:number \\$upper})",
     "description": "Clamps `number` within the inclusive `lower` and `upper` bounds.\n"
   },
-  "Thorin::obj_pick": {
-    "prefix": "Thorin::obj_pick",
-    "body": "Thorin::obj_pick(${1:object \\$object}, ${2:string|string[] \\$paths})",
+  "Thorin::pick": {
+    "prefix": "Thorin::pick",
+    "body": "Thorin::pick(${1:object \\$object}, ${2:string|string[] \\$paths})",
     "description": "Creates an object composed of the picked `object` properties.\n"
   },
-  "Thorin::path_app": {
-    "prefix": "Thorin::path_app",
-    "body": "Thorin::path_app(${1:string \\$slug})",
+  "Thorin::app_path": {
+    "prefix": "Thorin::app_path",
+    "body": "Thorin::app_path(${1:string \\$slug})",
     "description": "Return the app path depending on the `path.app` config\n"
   },
-  "Thorin::path_asset": {
-    "prefix": "Thorin::path_asset",
-    "body": "Thorin::path_asset(${1:string \\$slug})",
+  "Thorin::asset_path": {
+    "prefix": "Thorin::asset_path",
+    "body": "Thorin::asset_path(${1:string \\$slug})",
     "description": "Return a path relative to the `path.assets` config\n"
   },
-  "Thorin::path_base": {
-    "prefix": "Thorin::path_base",
-    "body": "Thorin::path_base(${1:string \\$slug})",
+  "Thorin::base_path": {
+    "prefix": "Thorin::base_path",
+    "body": "Thorin::base_path(${1:string \\$slug})",
     "description": "Return the base path depending on the `path.base` config\n"
   },
-  "Thorin::path_document_root": {
-    "prefix": "Thorin::path_document_root",
-    "body": "Thorin::path_document_root(${1:string \\$slug})",
+  "Thorin::document_root_path": {
+    "prefix": "Thorin::document_root_path",
+    "body": "Thorin::document_root_path(${1:string \\$slug})",
     "description": "Return the document root path depending on the `path.document_root` config\n"
   },
-  "Thorin::path_normalize": {
-    "prefix": "Thorin::path_normalize",
-    "body": "Thorin::path_normalize(${1:string \\$path})",
+  "Thorin::normalize_path": {
+    "prefix": "Thorin::normalize_path",
+    "body": "Thorin::normalize_path(${1:string \\$path})",
     "description": "Return a normalized version of the passed path.\n1. Resolve all the ../\n2. Replace backslashes with forwardslashes\n3. Combine multiple slashes into a single slash"
   },
-  "Thorin::path_root": {
-    "prefix": "Thorin::path_root",
-    "body": "Thorin::path_root(${1:string \\$slug})",
+  "Thorin::root_path": {
+    "prefix": "Thorin::root_path",
+    "body": "Thorin::root_path(${1:string \\$slug})",
     "description": "Return the document root path depending on the `path.document_root` config\n"
   },
-  "Thorin::path_sanitize": {
-    "prefix": "Thorin::path_sanitize",
-    "body": "Thorin::path_sanitize(${1:string \\$path})",
+  "Thorin::sanitize_path": {
+    "prefix": "Thorin::sanitize_path",
+    "body": "Thorin::sanitize_path(${1:string \\$path})",
     "description": "Sanitize a path for example like \"/my/cool/../path/.\" to \"/my/path/\"\nIt will do these actions:\n1. Normalize the path (resolve all ../, remove double slashed, etc...)\n2. Remove a trailing \".\"\n3. Make sure the path finish with a \"/\" if it's not a file\n"
   },
   "Thorin::recaptcha_display": {
@@ -1019,60 +1014,65 @@
     "body": "Thorin::str_unescape(${1:string \\$string})",
     "description": "The inverse of `escape`this method converts the HTML entities\n`&amp;`, `&lt;`, `&gt;`, `&quot;` and `&#39;` in `string` to\ntheir corresponding characters.\n"
   },
-  "Thorin::url_asset": {
-    "prefix": "Thorin::url_asset",
-    "body": "Thorin::url_asset(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
+  "Thorin::asset_url": {
+    "prefix": "Thorin::asset_url",
+    "body": "Thorin::asset_url(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
     "description": "Return a url relative to the `path.assets` and the `app.root_url` config\n"
   },
-  "Thorin::url_current": {
-    "prefix": "Thorin::url_current",
-    "body": "Thorin::url_current()",
+  "Thorin::current_url": {
+    "prefix": "Thorin::current_url",
+    "body": "Thorin::current_url()",
     "description": "Return the current url\n"
   },
-  "Thorin::url_domain": {
-    "prefix": "Thorin::url_domain",
-    "body": "Thorin::url_domain(${1:string \\$url = null})",
+  "Thorin::domain": {
+    "prefix": "Thorin::domain",
+    "body": "Thorin::domain(${1:string \\$url = null})",
     "description": "Get domain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
   },
-  "Thorin::url_extract_from_str": {
-    "prefix": "Thorin::url_extract_from_str",
-    "body": "Thorin::url_extract_from_str(${1:string \\$string})",
+  "Thorin::extract_urls_from_str": {
+    "prefix": "Thorin::extract_urls_from_str",
+    "body": "Thorin::extract_urls_from_str(${1:string \\$string})",
     "description": "Extract the url's from the passed string. Return the result in array format\n"
   },
-  "Thorin::url_query_string": {
-    "prefix": "Thorin::url_query_string",
-    "body": "Thorin::url_query_string(${1:string \\$url = null})",
+  "Thorin::protocol": {
+    "prefix": "Thorin::protocol",
+    "body": "Thorin::protocol(${1:string \\$url = null})",
+    "description": "Get the protocol of a url.\nIf no url is provided, will take the current one as input.\n"
+  },
+  "Thorin::query_string": {
+    "prefix": "Thorin::query_string",
+    "body": "Thorin::query_string(${1:string \\$url = null})",
     "description": "Get the query string of a url in array key->pair format.\nIf no url is provided, will take the current one as input.\n"
   },
-  "Thorin::url_root": {
-    "prefix": "Thorin::url_root",
-    "body": "Thorin::url_root(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
+  "Thorin::root_url": {
+    "prefix": "Thorin::root_url",
+    "body": "Thorin::root_url(${1:string \\$slug}, ${2:boolean \\$include_domain = false})",
     "description": "Return the root website url depending on the `app.root_url` config\n"
   },
-  "Thorin::url_sanitize": {
-    "prefix": "Thorin::url_sanitize",
-    "body": "Thorin::url_sanitize(${1:string \\$url})",
+  "Thorin::sanitize_url": {
+    "prefix": "Thorin::sanitize_url",
+    "body": "Thorin::sanitize_url(${1:string \\$url})",
     "description": "Return a sanitized version of the passed path. Here's the actions applied on the path:\n- Ensure no double \"/\" in the path like http://my-domain.com/some//thing\n- Apply the filter_var function withe the FILTER_SANITIZE_URL flag"
+  },
+  "Thorin::shorten_url": {
+    "prefix": "Thorin::shorten_url",
+    "body": "Thorin::shorten_url(${1:string \\$url})",
+    "description": "Shorten a url using the tinyurl service\n"
+  },
+  "Thorin::subdomain": {
+    "prefix": "Thorin::subdomain",
+    "body": "Thorin::subdomain(${1:string \\$url = null})",
+    "description": "Get subdomain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
+  },
+  "Thorin::tld": {
+    "prefix": "Thorin::tld",
+    "body": "Thorin::tld(${1:string \\$url = null})",
+    "description": "Get top level domain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
   },
   "Thorin::url_segments": {
     "prefix": "Thorin::url_segments",
     "body": "Thorin::url_segments(${1:string \\$url = null})",
     "description": "Get segments of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
-  },
-  "Thorin::url_shorten": {
-    "prefix": "Thorin::url_shorten",
-    "body": "Thorin::url_shorten(${1:string \\$url})",
-    "description": "Shorten a url using the tinyurl service\n"
-  },
-  "Thorin::url_subdomain": {
-    "prefix": "Thorin::url_subdomain",
-    "body": "Thorin::url_subdomain(${1:string \\$url = null})",
-    "description": "Get subdomain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
-  },
-  "Thorin::url_tld": {
-    "prefix": "Thorin::url_tld",
-    "body": "Thorin::url_tld(${1:string \\$url = null})",
-    "description": "Get top level domain of the provided url in array format.\nIf no url is specified, take the current one as input.\n"
   },
   "Thorin::define": {
     "prefix": "Thorin::define",
@@ -1083,6 +1083,11 @@
     "prefix": "Thorin::env",
     "body": "Thorin::env(${1:string \\$name}, ${2:mixed \\$default = null})",
     "description": "Return the environment variable that correspond to the requested one or a default value passed as a second parameter"
+  },
+  "Thorin::environment": {
+    "prefix": "Thorin::environment",
+    "body": "Thorin::environment()",
+    "description": "Return the application environment set in `app.environment` config"
   },
   "Thorin::eq": {
     "prefix": "Thorin::eq",
