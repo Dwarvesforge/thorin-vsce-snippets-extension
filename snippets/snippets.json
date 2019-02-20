@@ -1,4 +1,9 @@
 {
+  "Thorin::app_build": {
+    "prefix": "Thorin::app_build",
+    "body": "Thorin::app_build(${1:string \\$method = null})",
+    "description": "Return the application build version.\nThe build version will be taken either from:\n1. `config` The `app.build` config\n2. `txt` A file at the project root called `build.txt`\n3. `hash` Generating a hash from the `path.assets` folder\n"
+  },
   "Thorin::app_domain": {
     "prefix": "Thorin::app_domain",
     "body": "Thorin::app_domain()",
@@ -494,10 +499,25 @@
     "body": "Thorin::config(${1:string \\$path})",
     "description": "Get a configuration depending on the path passed"
   },
+  "Thorin::date": {
+    "prefix": "Thorin::date",
+    "body": "Thorin::date(${1:integer \\$year = null}, ${2:integer \\$month = null}, ${3:integer \\$day = null})",
+    "description": "Create a date in [Carbon](https://carbon.nesbot.com/) object format.\n"
+  },
+  "Thorin::datetime": {
+    "prefix": "Thorin::datetime",
+    "body": "Thorin::datetime(${1:integer \\$year = null}, ${2:integer \\$month = null}, ${3:integer \\$day = null}, ${4:integer \\$hour = null}, ${5:integer \\$minute = null}, ${6:integer \\$second = null})",
+    "description": "Create a datetime in [Carbon](https://carbon.nesbot.com/) object format.\n"
+  },
   "Thorin::now": {
     "prefix": "Thorin::now",
     "body": "Thorin::now()",
-    "description": "Gets the timestamp of the number of milliseconds that have elapsed since the Unix epoch (1 January 1970 00:00:00 UTC).\n"
+    "description": "Return the current datetime in [Carbon](https://carbon.nesbot.com/) object format.\n"
+  },
+  "Thorin::time": {
+    "prefix": "Thorin::time",
+    "body": "Thorin::time(${1:integer \\$hour = null}, ${2:integer \\$minute = null}, ${3:integer \\$second = null})",
+    "description": "Create a time in [Carbon](https://carbon.nesbot.com/) object format.\n"
   },
   "Thorin::db_boot_eloquent": {
     "prefix": "Thorin::db_boot_eloquent",
@@ -593,6 +613,11 @@
     "prefix": "Thorin::force_download",
     "body": "Thorin::force_download(${1:string \\$filepath}, ${2:string \\$filename})",
     "description": "Force download the passed file with the passed name"
+  },
+  "Thorin::hash_directory": {
+    "prefix": "Thorin::hash_directory",
+    "body": "Thorin::hash_directory(${1:string \\$directory_path})",
+    "description": "Return a md5 hash of the passed directory"
   },
   "Thorin::human_filesize": {
     "prefix": "Thorin::human_filesize",
